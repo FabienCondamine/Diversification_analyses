@@ -21,7 +21,11 @@ The framework is highly flexible, as explained in the chapter, and may include o
 Please, cite the book chapter and appropriate references (see below) when using this script and approach. Also, don’t hesitate to contact me if you have any trouble or question.
 
 Etienne R.S., Haegeman B., Stadler T., Aze T., Pearson P.N., Purvis A., Phillimore A.B. 2012. Diversity-dependence brings molecular phylogenies closer to agreement with the fossil record. Proc. Roy. Soc. Lond. B, 279, 1300–1309.
+
 Morlon H., Parsons T.L., Plotkin, J. 2011. Reconciling molecular phylogenies with the fossil record. Proc. Natl. Acad. Sci. USA, 108, 16327-16332.
+
 Condamine F.L., Rolland J., Morlon H. (2013) Macroevolutionary perspectives to environmental change. Ecol. Lett., 16, 72-85.
+
 Condamine F.L., Antonelli A., Lagomarsino L.P., Hoorn C., Liow L.H. 2017. Teasing apart mountain uplift, climate change and biotic drivers of species diversification. In: Mountains, Climate, and Biodiversity (eds. Hoorn C., Antonelli A.). Wiley Blackwell, pp. xx-xx. 
+
 Stadler T. 2011. Mammalian phylogeny reveals recent diversification rate shifts. Proc. Natl. Acad. Sci. USA, 108, 6187-6192.
