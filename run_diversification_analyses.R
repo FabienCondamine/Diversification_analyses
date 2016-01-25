@@ -14,12 +14,12 @@ library("TreePar")
 
 #R codes and functions
 source("diversification_library/fit_bd.R")
+source("diversification_library/fit_env_bd.R")
+source("diversification_library/integrate.R")
 source("diversification_library/likelihood_bd.R")
 source("diversification_library/Phi.R")
 source("diversification_library/Psi.R")
-source("diversification_library/integrate.R")
 source("diversification_library/tables.summary.R")
-source("diversification_library/fit_env_bd.R")
 
 no.extension <- function(filename)
 {
@@ -31,8 +31,8 @@ no.extension <- function(filename)
 # LIST of FUNCTIONS
 # 1. run_Morlon_models (tree_file, sampling_fraction=1, number_of_trees=1)
 # 2. run_PaleoEnv (tree_file, env_data_file,sampling_fraction=1, number_of_trees=1)
-# 3. run_DDD(tree_file, sampling_fraction=1)
-# 4. run_TreePar (tree_file,sampling_fraction=1,number_of_trees=1)
+# 3. run_DDD(tree_file, total_richness=Ntip(tree_file), number_of_trees=1)
+# 4. run_TreePar (tree_file, sampling_fraction=1, number_of_trees=1)
 ################################################################################
 
 
@@ -292,7 +292,7 @@ cst.lamb=F; cst.mu=F; expo.lamb=F; expo.mu=F; fix.mu=F
 # If using this appraoch, please cite:
 # Condamine F.L., Rolland J., Morlon H. 2013. Macroevolutionary perspectives to environmental change. Ecol. Lett. 16:72–85.
 
-run_PaleoEnv <- function (tree_file, env_data_file,sampling_fraction=1, number_of_trees=1)
+run_PaleoEnv <- function (tree_file, env_data_file, sampling_fraction=1, number_of_trees=1)
 {
 	env_data<-read.table(env_data_file,header=T)
 	tree_file_name <- tree_file
@@ -541,7 +541,7 @@ run_PaleoEnv <- function (tree_file, env_data_file,sampling_fraction=1, number_o
 # If using this appraoch, please cite:
 # Etienne R.S., Haegeman B., Stadler T., Aze T., Pearson P.N., Purvis A., Phillimore A.B. 2012. Diversity-dependence brings molecular phylogenies closer to agreement with the fossil record. Proc. Roy. Soc. Lond. B 279:1300–1309.
 
-run_DDD<-function(tree_file, initial.richness=Ntip(tree_file), number_of_trees=1)
+run_DDD<-function(tree_file, total_richness=Ntip(tree_file), number_of_trees=1)
 {
 	tree_file_name<-tree_file
 	tree_file<-read.nexus(tree_file)
@@ -555,31 +555,31 @@ run_DDD<-function(tree_file, initial.richness=Ntip(tree_file), number_of_trees=1
 		
 		if (length(posteriors)==1){phyloi<-tree_file} else {phyloi<-posteriors[[i]]}
 		brtsi<-getx(phyloi)
-		missing.lineages <- initial.richness - Ntip(phyloi)
-		resi<-10*(initial.richness)
+		missing.lineages <- total_richness - Ntip(phyloi)
+		resi<-10*(total_richness)
 	
 print("Linear dependence of speciation rate without extinction")
-	DDD_1<-dd_ML(brtsi, ddmodel=1, initparsopt=c(0.3, initial.richness), idparsopt=c(1,3), idparsfix=c(2), parsfix=c(0), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
+	DDD_1<-dd_ML(brtsi, ddmodel=1, initparsopt=c(0.3, total_richness), idparsopt=c(1,3), idparsfix=c(2), parsfix=c(0), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
 	print(DDD_1)
 
 print("Linear dependence of speciation rate with extinction")
-	DDD_2<-dd_ML(brtsi, ddmodel=1, initparsopt=c(0.3,0.1, initial.richness), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
+	DDD_2<-dd_ML(brtsi, ddmodel=1, initparsopt=c(0.3,0.1, total_richness), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
 	print(DDD_2)
 
 print("Exponential dependence of speciation rate with extinction")
-	DDD_3<-dd_ML(brtsi, ddmodel=2, initparsopt=c(0.1,0.01, initial.richness), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
+	DDD_3<-dd_ML(brtsi, ddmodel=2, initparsopt=c(0.1,0.01, total_richness), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
 	print(DDD_3)
 
 print("Linear dependence of extinction rate")
-	DDD_4<-dd_ML(brtsi, ddmodel=3, initparsopt=c(0.3,0.1, initial.richness), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
+	DDD_4<-dd_ML(brtsi, ddmodel=3, initparsopt=c(0.3,0.1, total_richness), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
 print(DDD_4)
 
 print("Exponential dependence of extinction rate")
-	DDD_5<-dd_ML(brtsi, ddmodel=4, initparsopt=c(0.1,0.01, initial.richness), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
+	DDD_5<-dd_ML(brtsi, ddmodel=4, initparsopt=c(0.1,0.01, total_richness), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
 print(DDD_5)
 
 print("Linear dependence of speciation and extinction rates")
-	DDD_6<-dd_ML(brtsi, ddmodel=5, initparsopt=c(0.5,0.1, initial.richness,0.001), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
+	DDD_6<-dd_ML(brtsi, ddmodel=5, initparsopt=c(0.5,0.1, total_richness,0.001), res=resi, missnumspec=missing.lineages, cond=1, btorph=1, soc=2)
 print(DDD_6)
 
 	############# RESULTS ###########################################
@@ -646,7 +646,7 @@ print(DDD_6)
 	final_table_tree_file<-tables.summary(final)
 
 	fname <- no.extension(basename(tree_file_name))
-	outfile <- paste(dirname(tree_file_name), "/", fname, "_results_DDDtxt", sep="")
+	outfile <- paste(dirname(tree_file_name), "/", fname, "_results_DDD.txt", sep="")
 	out_R <- paste(dirname(tree_file_name), "/", fname, "_complete_results_DDD.Rdata", sep="")
 
 	write.table(final_table_tree_file,file=outfile,quote=FALSE,sep="\t",row.names=FALSE)
