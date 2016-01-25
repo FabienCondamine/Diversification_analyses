@@ -5,7 +5,7 @@ Fabien L. Condamine*, Alexandre Antonelli, Laura P. Lagomarsino, Carina Hoorn an
 
 Author for correspondence (*): fabien.condamine@gmail.com
 
-Manual to use the R script provided in Dryad
+Manual to use the R script provided in GitHub
 Oct. 15, 2015 – Fabien L. Condamine
 
 The following R script aims at testing the prevalence of the Red Queen and the Court Jester using time-calibrated phylogenies only. The script basically takes a tree (or multiple trees), and performs several birth-death models as explained in the chapter, and detailed below. 
