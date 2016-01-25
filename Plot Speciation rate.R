@@ -76,7 +76,7 @@ res<-sm.spline(InfTemp[,"Age"],InfTemp[,"Temperature"],df=100) # You may adjust 
 Temp_fun<-function(x){predict(res,x)}
 
 # Speciation rate
-# Please fill/replace the x in the objects below with the results of your paleoenvironment-dependent analysis. 
+# Please replace the as.numeric() in the objects TempDep_lamb_par1 / 2 below with the parameter estimates of your paleoenvironment-dependent analysis. 
 # TempDep_lamb_par1 is lambda, TempDep_lamb_par2 is alpha.
 # TempDep_lamb_par1_sd is the standard error of lambda, and TempDep_lamb_par2_sd is the standard error of alpha. 
 
@@ -98,7 +98,7 @@ lines(-InfTemp[,"Age"], f.lamb.low(InfTemp[,"Age"]),ty="l",col="chartreuse3",xli
 lines(-InfTemp[,"Age"], f.lamb.high(InfTemp[,"Age"]),ty="l",col="chartreuse3",xlim=c(-crown.age,0),lwd=1,lty="dotted",yaxt="n")
 
 # Extinction rate
-# Please fill/replace the x in the objects below with the results of your paleoenvironment-dependent analysis. 
+# Please replace the as.numeric() in the objects TempDep_mu_par1 / 2 below with the parameter estimates of your paleoenvironment-dependent analysis. 
 # TempDep_mu_par1 is mu, and TempDep_mu_par2 is beta.
 # TempDep_mu_par1_sd is the standard error of mu, and TempDep_mu_par2_sd is the standard error of beta. 
 
@@ -129,7 +129,7 @@ std.err.results<-final_table_tree_file[[2]][order(as.numeric(final_table_tree_fi
 res<-sm.spline(InfAlti[,"Age"], InfAlti[,"Altitude"],df=20)
 Alti_fun <-function(x){predict(res,x)}
 
-# Please fill/replace the x in the objects below with the results of your paleoenvironment-dependent analysis. 
+# Please replace the as.numeric() in the objects AltiDep_lamb_par1 / 2 below with the parameter estimates of your paleoenvironment-dependent analysis. 
 # TempDep_lamb_par1 is lambda, TempDep_lamb_par2 is alpha.
 # TempDep_lamb_par1_sd is the standard error of lambda, and TempDep_lamb_par2_sd is the standard error of alpha. 
 
@@ -153,7 +153,7 @@ lines(-InfAlti[,"Age"], f.lamb.high(InfAlti[,"Age"]),ty="l",col="chartreuse3",lw
 
 
 # Extinction rate
-# Please fill/replace the x in the objects below with the results of your paleoenvironment-dependent analysis. 
+# Please replace the as.numeric() in the objects AltiDep_mu_par1 / 2 below with the parameter estimates of your paleoenvironment-dependent analysis. 
 # TempDep_mu_par1 is mu, and TempDep_mu_par2 is beta.
 # TempDep_mu_par1_sd is the standard error of mu, and TempDep_mu_par2_sd is the standard error of beta. 
 
@@ -184,7 +184,7 @@ std.err.results<-final_table_tree_file[[2]][order(as.numeric(final_table_tree_fi
 res<-sm.spline(InfSea[,"Age"], InfSea[,"Level"],df=50)
 Sea_fun <-function(x){predict(res,x)}
 
-# Please fill/replace the x in the objects below with the results of your paleoenvironment-dependent analysis. 
+# Please replace the as.numeric() in the objects SeaDep_lamb_par1 / 2 below with the parameter estimates of your paleoenvironment-dependent analysis. 
 # SeaDep_lamb_par1 is lambda, SeaDep_lamb_par2 is alpha.
 # SeaDep_lamb_par1_sd is the standard error of lambda, and SeaDep_lamb_par2_sd is the standard error of alpha. 
 
@@ -207,7 +207,7 @@ lines(-InfSea[,"Age"], f.lamb.low(InfSea[,"Age"]),ty="l",col="chartreuse3",lwd=1
 lines(-InfSea[,"Age"], f.lamb.high(InfSea[,"Age"]),ty="l",col="chartreuse3",lwd=1,lty="dotted",yaxt="n")
 
 # Extinction rate
-# Please fill/replace the x in the objects below with the results of your paleoenvironment-dependent analysis. 
+# Please replace the as.numeric() in the objects SeaDep_mu_par1 / 2 below with the parameter estimates of your paleoenvironment-dependent analysis. 
 # SeaDep_mu_par1 is mu, and SeaDep_mu_par2 is beta.
 # SeaDep_mu_par1_sd is the standard error of mu, and SeaDep_mu_par2_sd is the standard error of beta. 
 
