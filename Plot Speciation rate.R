@@ -82,8 +82,8 @@ Temp_fun<-function(x){predict(res,x)}
 
 TempDep_lamb_par1 <- as.numeric(mean.results[1,5])
 TempDep_lamb_par2 <- as.numeric(mean.results[1,6]); if (TempDep_lamb_par2 =="NaN"){TempDep_lamb_par2=0}
-TempDep_lamb_par1_sd <- 0 # can be changed if you ran the analyses on a set of trees (then you have the standard errors table
-TempDep_lamb_par2_sd <- 0 # can be changed if you ran the analyses on a set of trees (then you have the standard errors table)
+TempDep_lamb_par1_sd <- 0 # canbe changed if you ran the analyses on a set of trees (then you have the standard errors table
+TempDep_lamb_par2_sd <- 0 # canbe changed if you ran the analyses on a set of trees (then you have the standard errors table)
 
 f.lamb.mean<-function(x){TempDep_lamb_par1*exp(TempDep_lamb_par2*Temp_fun(x))}
 f.lamb.low<-function(x){(TempDep_lamb_par1-TempDep_lamb_par1_sd)*exp((TempDep_lamb_par2-TempDep_lamb_par2_sd)*Temp_fun(x))}
@@ -104,8 +104,8 @@ lines(-InfTemp[,"Age"], f.lamb.high(InfTemp[,"Age"]),ty="l",col="chartreuse3",xl
 
 TempDep_mu_par1 <- as.numeric(mean.results[1,7]); if (TempDep_mu_par1=="NaN"){TempDep_mu_par1=0}
 TempDep_mu_par2 <- as.numeric(mean.results[1,8]); if (TempDep_mu_par2=="NaN"){TempDep_mu_par2=0}
-TempDep_mu_par1_sd <- 0 # can be changed if you ran the analyses on a set of trees (then you have the standard errors table
-TempDep_mu_par2_sd <- 0 # can be changed if you ran the analyses on a set of trees (then you have the standard errors table
+TempDep_mu_par1_sd <- 0 # canbe changed if you ran the analyses on a set of trees (then you have the standard errors table
+TempDep_mu_par2_sd <- 0 # canbe changed if you ran the analyses on a set of trees (then you have the standard errors table
 
 f.mu.mean<-function(x){TempDep_mu_par1*exp(TempDep_mu_par2*Temp_fun(x))}
 f.mu.low<-function(x){(TempDep_mu_par1-TempDep_mu_par1_sd)*exp((TempDep_mu_par2-TempDep_mu_par2_sd)*Temp_fun(x))}
