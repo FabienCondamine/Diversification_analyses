@@ -1,3 +1,5 @@
+## This is an experimental code that would need some work to be more user-friendly
+
 if ( ! ("picante" %in% installed.packages())) {install.packages("picante", dependencies=T)}
 if ( ! ("pspline" %in% installed.packages())) {install.packages("pspline", dependencies=T)}
 

@@ -1,6 +1,6 @@
 # If using this analytical pipeline, please cite:
 # Condamine F.L., Antonelli A., Lagomarsino L.P., Hoorn C., Liow L.H. 2017. Teasing apart mountain uplift, climate change and biotic drivers of diversification. In: Mountains, Climate, and Biodiversity (eds. Hoorn C., Antonelli A.). Wiley Blackwell, pp. xx-xx.
-# Author: Fabien L. Condamine (email: fabien.condamine@gmail.com). Please don't hesitate to contact me if you have any trouble or question.
+# Author: Fabien L. Condamine (email: fabien.condamine@gmail.com). Please don't hesitate to contact me if you have any issue or question with this code.
 
 #Required R packages (will install them automatically if not yet installed)
 if ( ! ("DDD" %in% installed.packages())) {install.packages("DDD", dependencies=T)}

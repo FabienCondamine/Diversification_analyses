@@ -25,6 +25,8 @@ Etienne R.S., Haegeman B., Stadler T., Aze T., Pearson P.N., Purvis A., Phillimo
 
 Morlon H., Parsons T.L., Plotkin, J. 2011. Reconciling molecular phylogenies with the fossil record. Proc. Natl. Acad. Sci. USA, 108, 16327-16332.
 
+Morlon H., Lewitus E., Condamine F.L., Manceau M., Clavel J., Drury J. 2016. RPANDA: an R package for macroevolutionary analyses on phylogenetic trees. Methods Ecol. Evol. doi.org/10.1111/2041-210X.12526
+
 Condamine F.L., Rolland J., Morlon H. (2013) Macroevolutionary perspectives to environmental change. Ecol. Lett., 16, 72-85.
 
 Condamine F.L., Antonelli A., Lagomarsino L.P., Hoorn C., Liow L.H. 2017. Teasing apart mountain uplift, climate change and biotic drivers of species diversification. In: Mountains, Climate, and Biodiversity (eds. Hoorn C., Antonelli A.). Wiley Blackwell, pp. xx-xx. 
