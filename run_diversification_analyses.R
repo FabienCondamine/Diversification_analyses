@@ -38,7 +38,7 @@ no.extension <- function(filename)
 
 ## Morlon's models: time-dependent diversification models with continuous rates through time
 # If using this appraoch, please cite:
-# Morlon H., Parsons T.L., Plotkin J. 2011. Reconciling molecular phylogenies with the fossil record. Proc. Natl. Acad. Sci. USA 108:16327–16332.
+# Morlon H., Parsons T.L., Plotkin J. 2011. Reconciling molecular phylogenies with the fossil record. Proc. Natl. Acad. Sci. USA 108: 16327–16332.
 
 run_Morlon_models <- function (tree_file, sampling_fraction=1, number_of_trees=1)
 {
@@ -290,7 +290,7 @@ cst.lamb=F; cst.mu=F; expo.lamb=F; expo.mu=F; fix.mu=F
 
 ## Condamine's models: paleoenvironment-dependent diversification models with continuous rates through time
 # If using this appraoch, please cite:
-# Condamine F.L., Rolland J., Morlon H. 2013. Macroevolutionary perspectives to environmental change. Ecol. Lett. 16:72–85.
+# Condamine F.L., Rolland J., Morlon H. 2013. Macroevolutionary perspectives to environmental change. Ecol. Lett. 16: 72–85.
 
 run_PaleoEnv <- function (tree_file, env_data_file, sampling_fraction=1, number_of_trees=1)
 {
@@ -539,7 +539,7 @@ run_PaleoEnv <- function (tree_file, env_data_file, sampling_fraction=1, number_
 
 ## DDD models: diversity-dependent diversification models
 # If using this appraoch, please cite:
-# Etienne R.S., Haegeman B., Stadler T., Aze T., Pearson P.N., Purvis A., Phillimore A.B. 2012. Diversity-dependence brings molecular phylogenies closer to agreement with the fossil record. Proc. Roy. Soc. Lond. B 279:1300–1309.
+# Etienne R.S., Haegeman B., Stadler T., Aze T., Pearson P.N., Purvis A., Phillimore A.B. 2012. Diversity-dependence brings molecular phylogenies closer to agreement with the fossil record. Proc. Roy. Soc. Lond. B 279: 1300–1309.
 
 run_DDD<-function(tree_file, total_richness=Ntip(tree_file), number_of_trees=1)
 {
@@ -660,7 +660,7 @@ print(DDD_6)
 
 ## TreePar models: time-dependent diversification models with discrete rates through time
 # If using this appraoch, please cite:
-# Stadler T. 2011. Mammalian phylogeny reveals recent diversification rate shifts. Proc. Natl. Acad. Sci. USA 108:6187–6192.
+# Stadler T. 2011. Mammalian phylogeny reveals recent diversification rate shifts. Proc. Natl. Acad. Sci. USA 108: 6187–6192.
 
 run_TreePar <- function (tree_file, sampling_fraction=1, grid=0.1, number_of_trees=1)
 {
